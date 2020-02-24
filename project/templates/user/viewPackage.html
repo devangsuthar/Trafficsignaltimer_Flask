@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Traffic Ease Signal Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM , CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/app.min.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+
+    <!-- Topbar Start -->
+    {% include 'user/header.html' %}
+    <!-- end Topbar -->
+
+
+    <!-- ========== Left Sidebar Start ========== -->
+
+    {% include 'user/menu.html' %}
+
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Abstack</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Extras</a></li>
+                                    <li class="breadcrumb-item active">Pricing</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Package</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 center-page">
+                        <div class="text-center">
+                            <h3 class="mt-3">Choose your perfect plan</h3>
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                Lorem Ipsum has <br/> been the industry's standard dummy text ever since the
+                                1500s.
+                            </p>
+                        </div>
+
+                        <div class="row mt-5 mb-5">
+
+                            <!--Pricing Column-->
+                            <article class="pricing-column col-md-4">
+                                <div class="inner-box card-box">
+                                    <div class="plan-header text-white text-center bg-gradient p-3 rounded">
+                                        <h3 class="plan-title text-uppercase font-16">Gold</h3>
+                                        <h2 class="plan-price">$59</h2>
+                                        <div class="plan-duration">Per Month</div>
+                                    </div>
+                                    <ul class="plan-stats list-unstyled text-center">
+                                        <li><b>200 GB</b> Storage</li>
+                                        <li><b>1080p Resoluation</b></li>
+                                        <li><b>High Power</b></li>
+                                        <li><b>Better Brightness</b></li>
+                                    </ul>
+
+                                    <div class="text-center mb-2">
+                                        <a href="/user/Purchase?purchaseId={{ row['purchaseId']}}"
+                                           class="btn btn-success btn-bordered width-lg btn-md width-md btn-bordred btn-rounded waves-effect waves-light">Purchase</a>
+                                    </div>
+                                </div>
+                            </article>
+
+
+                            <!--Pricing Column-->
+                            <article class="pricing-column col-md-4">
+                                <div class="inner-box card-box">
+                                    <div class="ribbon-pricing bg-danger rounded font-13 text-white"><b>POPULAR</b>
+                                    </div>
+                                    <div class="plan-header text-white text-center bg-gradient p-3 rounded">
+                                        <h3 class="plan-title text-uppercase font-16">Silver</h3>
+                                        <h2 class="plan-price">$39</h2>
+                                        <div class="plan-duration">Per Month</div>
+                                    </div>
+                                    <ul class="plan-stats list-unstyled text-center">
+                                        <li><b>100 GB</b> Storage</li>
+                                        <li><b>720p Resoluation</b></li>
+                                        <li><b>High Power</b></li>
+                                        <li><b>Better Brightness</b></li>
+                                    </ul>
+
+                                    <div class="text-center mb-2">
+                                        <a href="/user/Purchase?purchaseId={{ row['purchaseId'] }}"
+                                           class="btn btn-success width-lg btn-md width-md btn-bordred btn-rounded waves-effect waves-light">Purchase</a>
+                                    </div>
+                                </div>
+                            </article>
+
+
+                            <!--Pricing Column-->
+                            <article class="pricing-column col-md-4">
+                                <div class="inner-box card-box">
+                                    <div class="plan-header text-white text-center bg-gradient p-3 rounded">
+                                        <h3 class="plan-title text-uppercase font-16">Bronze</h3>
+                                        <h2 class="plan-price">$19</h2>
+                                        <div class="plan-duration">Per Month</div>
+                                    </div>
+                                    <ul class="plan-stats list-unstyled text-center">
+                                        <li><b>60 GB</b> Storage</li>
+                                        <li><b>720p Resoluation</b></li>
+                                        <li><b>Low Power</b></li>
+                                        <li><b>Average Brightness</b></li>
+                                    </ul>
+
+                                    <div class="text-center mb-2">
+                                        <a href="/user/Purchase?purchaseId={{ row['purchaseId'] }}"
+                                           class="btn btn-success btn-bordered width-lg btn-md width-md btn-bordred btn-rounded waves-effect waves-light">Purchase</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div><!-- end col -->
+                </div>
+                <!-- end row -->
+
+
+            </div> <!-- end container-fluid -->
+
+        </div> <!-- end content -->
+
+
+        <!-- Footer Start -->
+        {% include 'user/footer.html' %}
+        <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+<!-- Right Sidebar -->
+<div class="right-bar">
+    <div class="rightbar-title">
+        <a href="javascript:void(0);" class="right-bar-toggle float-right">
+            <i class="mdi mdi-close"></i>
+        </a>
+        <h5 class="m-0 text-white">Settings</h5>
+    </div>
+    <div class="slimscroll-menu">
+        <hr class="mt-0">
+        <h5 class="pl-3">Basic Settings</h5>
+        <hr class="mb-0"/>
+
+
+        <div class="p-3">
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                <label class="custom-control-label" for="customCheck1">Notifications</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
+                <label class="custom-control-label" for="customCheck2">API Access</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Auto Updates</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="customCheck4" checked>
+                <label class="custom-control-label" for="customCheck4">Online Status</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                <label class="custom-control-label" for="customCheck5">Auto Payout</label>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <hr class="mt-0"/>
+        <h5 class="pl-3 pr-3">Messages <span class="float-right badge badge-pill badge-danger">24</span></h5>
+        <hr class="mb-0"/>
+        <div class="p-3">
+            <div class="inbox-widget">
+                <div class="inbox-item">
+                    <div class="inbox-item-img"><img src="../../static/adminResources/images/users/avatar-1.jpg"
+                                                     class="rounded-circle" alt=""></div>
+                    <p class="inbox-item-author"><a href="javascript: void(0);">Chadengle</a></p>
+                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                    <p class="inbox-item-date">13:40 PM</p>
+                </div>
+                <div class="inbox-item">
+                    <div class="inbox-item-img"><img src="../../static/adminResources/images/users/avatar-2.jpg"
+                                                     class="rounded-circle" alt=""></div>
+                    <p class="inbox-item-author"><a href="javascript: void(0);">Tomaslau</a></p>
+                    <p class="inbox-item-text">I've finished it! See you so...</p>
+                    <p class="inbox-item-date">13:34 PM</p>
+                </div>
+                <div class="inbox-item">
+                    <div class="inbox-item-img"><img src="../../static/adminResources/images/users/avatar-3.jpg"
+                                                     class="rounded-circle" alt=""></div>
+                    <p class="inbox-item-author"><a href="javascript: void(0);">Stillnotdavid</a></p>
+                    <p class="inbox-item-text">This theme is awesome!</p>
+                    <p class="inbox-item-date">13:17 PM</p>
+                </div>
+
+                <div class="inbox-item">
+                    <div class="inbox-item-img"><img src="../../static/adminResources/images/users/avatar-4.jpg"
+                                                     class="rounded-circle" alt=""></div>
+                    <p class="inbox-item-author"><a href="javascript: void(0);">Kurafire</a></p>
+                    <p class="inbox-item-text">Nice to meet you</p>
+                    <p class="inbox-item-date">12:20 PM</p>
+
+                </div>
+                <div class="inbox-item">
+                    <div class="inbox-item-img"><img src="../../static/adminResources/images/users/avatar-5.jpg"
+                                                     class="rounded-circle" alt=""></div>
+                    <p class="inbox-item-author"><a href="javascript: void(0);">Shahedk</a></p>
+                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                    <p class="inbox-item-date">10:15 AM</p>
+
+                </div>
+            </div> <!-- end inbox-widget -->
+        </div> <!-- end .p-3-->
+
+    </div> <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+<!-- Vendor js -->
+<script src="../../static/adminResources/js/vendor.min.js"></script>
+
+<!-- App js -->
+<script src="../../static/adminResources/js/app.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Traffic Ease Signal Timer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
+    <meta content="Coderthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/adminResources/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="../../static/adminResources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/icons.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/adminResources/css/app.min.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+
+    <!-- Topbar Start -->
+
+
+    {% include 'admin/header.html' %}
+
+
+    <!-- end Topbar -->
+
+
+    <!-- ========== Left Sidebar Start ========== -->
+
+    <!-- ========== Left Sidebar Start ========== -->
+
+
+    {% include 'admin/menu.html' %}
+
+
+    <!-- Left Sidebar End -->
+
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">TEST
+                                    </a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
+                                    <li class="breadcrumb-item active">Form Validation</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Add Traffic Police Station</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="card-box">
+
+                            <form action="/admin/insertTrafficPoliceStation" method="post">
+
+                                <div class="form-group">
+                                    <label for="trafficPoliceStationName">Traffic Police Station Name<span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" name="trafficPoliceStationName" required
+                                           placeholder="Enter traffic police station name" class="form-control"
+                                           id="policestationName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="trafficpolicestationcontact">Traffic Police Station Contact<span
+                                            class="text-danger">*</span></label>
+                                    <input type="tel" name="trafficPoliceStationContact" required
+                                           data-validation-containsnumber-regex="(\d)+"
+                                           data-validation-containsnumber-message="No Characters Allowed, Only Numbers"
+                                           placeholder="Enter traffic police station contact number"
+                                           class="form-control" id="contact">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="trafficPoliceStationAreaName">Traffic Police Station Area Name<span
+                                            class="text-danger">*</span></label>
+                                    <select class="form-control" id="select" name="trafficPoliceStation_AreaId">
+                                        {% for i in  areaVOList %}
+                                            <option value="{{ i['areaId'] }}">{{ i['areaName'] }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="trafficPoliceStationAddress">Traffic Police Station Address<span
+                                            class="text-danger">*</span></label>
+                                    <div>
+                                        <textarea required placeholder="Enter traffic police station address"
+                                                  name="trafficPoliceStationAddress" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="trafficpolicestationcontact">Traffic Police Station UserName<span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" name="loginUsername" required
+                                           data-validation-containsnumber-regex="(\d)+"
+                                           data-validation-containsnumber-message="No Characters Allowed, Only Numbers"
+                                           placeholder="Enter traffic police station user name"
+                                           class="form-control" id="contact">
+                                </div>
+
+
+                                <div class="form-group text-right mb-0">
+                                    <button class="btn btn-gradient waves-effect waves-light" type="submit">
+                                        Submit
+                                    </button>
+                                    <button type="reset" class="btn btn-light waves-effect ml-1">
+                                        Cancel
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-box -->
+                    </div>
+                    <!-- end col -->
+
+                    {#                    <div class="col-lg-6">#}
+                    {#                        <div class="card-box">#}
+                    {#                            <h4 class="header-title">Horizontal Form</h4>#}
+                    {#                            <p class="sub-header">#}
+                    {#                                Parsley is a javascript form validation library. It helps you provide your users with#}
+                    {#                                feedback on their form submission before sending it to your server.#}
+                    {#                            </p>#}
+                    {##}
+                    {#                            <form role="form" class="parsley-examples">#}
+                    {#                                <div class="form-group row">#}
+                    {#                                    <label for="inputEmail3" class="col-4 col-form-label">Email<span#}
+                    {#                                            class="text-danger">*</span></label>#}
+                    {#                                    <div class="col-7">#}
+                    {#                                        <input type="email" required class="form-control"#}
+                    {#                                               id="inputEmail3" placeholder="Email">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group row">#}
+                    {#                                    <label for="hori-pass1" class="col-4 col-form-label">Password<span#}
+                    {#                                            class="text-danger">*</span></label>#}
+                    {#                                    <div class="col-7">#}
+                    {#                                        <input id="hori-pass1" type="password" placeholder="Password" required#}
+                    {#                                               class="form-control">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group row">#}
+                    {#                                    <label for="hori-pass2" class="col-4 col-form-label">Confirm Password#}
+                    {#                                        <span class="text-danger">*</span></label>#}
+                    {#                                    <div class="col-7">#}
+                    {#                                        <input data-parsley-equalto="#hori-pass1" type="password" required#}
+                    {#                                               placeholder="Password" class="form-control" id="hori-pass2">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {##}
+                    {#                                <div class="form-group row">#}
+                    {#                                    <label for="webSite" class="col-4 col-form-label">Web Site<span class="text-danger">*</span></label>#}
+                    {#                                    <div class="col-7">#}
+                    {#                                        <input type="url" required parsley-type="url" class="form-control"#}
+                    {#                                               id="webSite" placeholder="URL">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group row">#}
+                    {#                                    <div class="col-8 offset-4">#}
+                    {#                                        <div class="checkbox checkbox-purple">#}
+                    {#                                            <input id="checkbox6" type="checkbox">#}
+                    {#                                            <label for="checkbox6">#}
+                    {#                                                Remember me#}
+                    {#                                            </label>#}
+                    {#                                        </div>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group row mb-0">#}
+                    {#                                    <div class="col-8 offset-4">#}
+                    {#                                        <button type="submit" class="btn btn-gradient waves-effect waves-light">#}
+                    {#                                            Register#}
+                    {#                                        </button>#}
+                    {#                                        <button type="reset"#}
+                    {#                                                class="btn btn-light waves-effect ml-1">#}
+                    {#                                            Cancel#}
+                    {#                                        </button>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </form>#}
+                    {#                        </div>#}
+                    {##}
+                    {#                    </div> <!-- end col -->#}
+                    {#                </div>#}
+                    <!-- end row -->
+
+                    {#                <div class="row">#}
+                    {#                    <div class="col-lg-6">#}
+                    {#                        <div class="card-box">#}
+                    {#                            <h4 class="header-title">Validation type</h4>#}
+                    {#                            <p class="sub-header">#}
+                    {#                                Parsley is a javascript form validation library. It helps you provide your users with#}
+                    {#                                feedback on their form submission before sending it to your server.#}
+                    {#                            </p>#}
+                    {##}
+                    {#                            <form class="parsley-examples" action="#">#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Required</label>#}
+                    {#                                    <input type="text" class="form-control" required#}
+                    {#                                           placeholder="Type something"/>#}
+                    {#                                </div>#}
+                    {##}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Equal To</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="password" id="pass2" class="form-control" required#}
+                    {#                                               placeholder="Password"/>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="mt-2">#}
+                    {#                                        <input type="password" class="form-control" required#}
+                    {#                                               data-parsley-equalto="#pass2"#}
+                    {#                                               placeholder="Re-Type Password"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {##}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>E-Mail</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="email" class="form-control" required#}
+                    {#                                               parsley-type="email" placeholder="Enter a valid e-mail"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>URL</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input parsley-type="url" type="url" class="form-control"#}
+                    {#                                               required placeholder="URL"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Digits</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input data-parsley-type="digits" type="text"#}
+                    {#                                               class="form-control" required#}
+                    {#                                               placeholder="Enter only digits"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Number</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input data-parsley-type="number" type="text"#}
+                    {#                                               class="form-control" required#}
+                    {#                                               placeholder="Enter only numbers"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Alphanumeric</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input data-parsley-type="alphanum" type="text"#}
+                    {#                                               class="form-control" required#}
+                    {#                                               placeholder="Enter alphanumeric value"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Textarea</label>#}
+                    {#                                    <div>#}
+                    {#                                        <textarea required class="form-control"></textarea>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group mb-0">#}
+                    {#                                    <div>#}
+                    {#                                        <button type="submit" class="btn btn-gradient waves-effect waves-light">#}
+                    {#                                            Submit#}
+                    {#                                        </button>#}
+                    {#                                        <button type="reset" class="btn btn-light waves-effect ml-1">#}
+                    {#                                            Cancel#}
+                    {#                                        </button>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </form>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                    {##}
+                    {#                    <div class="col-lg-6">#}
+                    {#                        <div class="card-box">#}
+                    {#                            <h4 class="header-title">Range validation</h4>#}
+                    {#                            <p class="sub-header">#}
+                    {#                                Parsley is a javascript form validation library. It helps you provide your users with#}
+                    {#                                feedback on their form submission before sending it to your server.#}
+                    {#                            </p>#}
+                    {##}
+                    {#                            <form action="#" class="parsley-examples">#}
+                    {##}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Min Length</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-minlength="6" placeholder="Min 6 chars."/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Max Length</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-maxlength="6" placeholder="Max 6 chars."/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Range Length</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-length="[5,10]"#}
+                    {#                                               placeholder="Text between 5 - 10 chars length"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Min Value</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-min="6" placeholder="Min value is 6"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Max Value</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-max="6" placeholder="Max value is 6"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Range Value</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input class="form-control" required type="text" min="6"#}
+                    {#                                               max="100" placeholder="Number between 6 - 100"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                                <div class="form-group">#}
+                    {#                                    <label>Regular Exp</label>#}
+                    {#                                    <div>#}
+                    {#                                        <input type="text" class="form-control" required#}
+                    {#                                               data-parsley-pattern="#[A-Fa-f0-9]{6}"#}
+                    {#                                               placeholder="Hex. Color"/>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {##}
+                    {#                                <div class="form-group mb-0">#}
+                    {#                                    <div>#}
+                    {#                                        <button type="submit" class="btn btn-gradient waves-effect waves-light">#}
+                    {#                                            Submit#}
+                    {#                                        </button>#}
+                    {#                                        <button type="reset" class="btn btn-light waves-effect ml-1">#}
+                    {#                                            Cancel#}
+                    {#                                        </button>#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </form>#}
+                    {##}
+                    {#                        </div> <!-- end card-box -->#}
+                    {#                    </div> <!-- end col -->#}
+                    {##}
+                    {#                </div>#}
+                    {#                <!-- end row -->#}
+                    {##}
+
+                </div> <!-- end container-fluid -->
+
+            </div> <!-- end content -->
+
+
+            <!-- Footer Start -->
+
+
+            {% include 'admin/footer.html' %}
+
+
+            <!-- end Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div class="rightbar-title">
+            <a href="javascript:void(0);" class="right-bar-toggle float-right">
+                <i class="mdi mdi-close"></i>
+            </a>
+            <h5 class="m-0 text-white">Settings</h5>
+        </div>
+        <div class="slimscroll-menu">
+            <hr class="mt-0">
+            <h5 class="pl-3">Basic Settings</h5>
+            <hr class="mb-0"/>
+
+
+            <div class="p-3">
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                    <label class="custom-control-label" for="customCheck1">Notifications</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="customCheck2" checked>
+                    <label class="custom-control-label" for="customCheck2">API Access</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    <label class="custom-control-label" for="customCheck3">Auto Updates</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="customCheck4" checked>
+                    <label class="custom-control-label" for="customCheck4">Online Status</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck5">
+                    <label class="custom-control-label" for="customCheck5">Auto Payout</label>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <hr class="mt-0"/>
+            <h5 class="pl-3 pr-3">Messages <span class="float-right badge badge-pill badge-danger">24</span></h5>
+            <hr class="mb-0"/>
+            <div class="p-3">
+                <div class="inbox-widget">
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="../../static/adminResources/images/avatar-1.jpg"
+                                                         class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author"><a href="javascript: void(0);">Chadengle</a></p>
+                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                        <p class="inbox-item-date">13:40 PM</p>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="../../static/adminResources/images/avatar-2.jpg"
+                                                         class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author"><a href="javascript: void(0);">Tomaslau</a></p>
+                        <p class="inbox-item-text">I've finished it! See you so...</p>
+                        <p class="inbox-item-date">13:34 PM</p>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="../../static/adminResources/images/avatar-3.jpg"
+                                                         class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author"><a href="javascript: void(0);">Stillnotdavid</a></p>
+                        <p class="inbox-item-text">This theme is awesome!</p>
+                        <p class="inbox-item-date">13:17 PM</p>
+                    </div>
+
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="../../static/adminResources/images/avatar-4.jpg"
+                                                         class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author"><a href="javascript: void(0);">Kurafire</a></p>
+                        <p class="inbox-item-text">Nice to meet you</p>
+                        <p class="inbox-item-date">12:20 PM</p>
+
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-item-img"><img src="../../static/adminResources/images/avatar-5.jpg"
+                                                         class="rounded-circle" alt=""></div>
+                        <p class="inbox-item-author"><a href="javascript: void(0);">Shahedk</a></p>
+                        <p class="inbox-item-text">Hey! there I'm available...</p>
+                        <p class="inbox-item-date">10:15 AM</p>
+
+                    </div>
+                </div> <!-- end inbox-widget -->
+            </div> <!-- end .p-3-->
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- Vendor js -->
+    <script src="../../static/adminResources/js/vendor.min.js"></script>
+
+    <!-- Plugin js-->
+    <script src="../../static/adminResources/js/parsley.min.js"></script>
+
+    <!-- Validation init js-->
+    <script src="../../static/adminResources/js/form-validation.init.js"></script>
+
+    <!-- App js -->
+    <script src="../../static/adminResources/js/app.min.js"></script>
+
+</body>
+</html>
